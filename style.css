@@ -44,6 +44,7 @@
     font-size: 20px;
     padding: 10px;
     margin: 15px;
+    text-align: center;
   }
   #restart-button{
     border: 1px solid red;

@@ -1,31 +1,40 @@
 window.gameState = {
     player1Name: '',
     player2Name:'',
-    playerX: 'X',
-    playerO:'O',
+    markX: 'X',
+    markO:'O',
     currentPlayer: 'X',
+    endGame:false,
+    clickedCellIndex: null,
     board: [
-      {id: '00',mark:'',  isMarked:false}, 
-      {id: '01',mark:'',  isMarked:false}, 
-      {id: '02',mark:'',  isMarked:false},
-      {id: '10',mark:'',  isMarked:false}, 
-      {id: '11',mark:'',  isMarked:false}, 
-      {id: '12',mark:'',  isMarked:false},
-      {id: '20',mark:'',  isMarked:false}, 
-      {id: '21',mark:'',  isMarked:false}, 
-      {id: '22',mark:'',  isMarked:false}
+      {id: '0',mark:'',  isMarked:false},
+      {id: '1',mark:'',  isMarked:false}, 
+      {id: '2',mark:'',  isMarked:false}, 
+      {id: '3',mark:'',  isMarked:false},
+      {id: '4',mark:'',  isMarked:false}, 
+      {id: '5',mark:'',  isMarked:false}, 
+      {id: '6',mark:'',  isMarked:false},
+      {id: '7',mark:'',  isMarked:false}, 
+      {id: '8',mark:'',  isMarked:false}, 
+     
     ],
-    clearBoard: function(){
-        this.board = [
-          {id: '00',mark:'',  isMarked:false}, 
-          {id: '01',mark:'',  isMarked:false}, 
-          {id: '02',mark:'',  isMarked:false},
-          {id: '10',mark:'',  isMarked:false}, 
-          {id: '11',mark:'',  isMarked:false}, 
-          {id: '12',mark:'',  isMarked:false},
-          {id: '20',mark:'',  isMarked:false}, 
-          {id: '21',mark:'',  isMarked:false}, 
-          {id: '22',mark:'',  isMarked:false}
-        ];
-    }
+  clearBoard: function () {
+      this.player1Name = '',
+      this.player2Name = '',
+      this.currentPlayer = 'X',
+      this.endGame=false,
+      this.clickedCellIndex = null,
+      this.board = [
+        { id: '0', mark: '', isMarked: false },
+        { id: '1', mark: '', isMarked: false },
+        { id: '2', mark: '', isMarked: false },
+        { id: '3', mark: '', isMarked: false },
+        { id: '4', mark: '', isMarked: false },
+        { id: '5', mark: '', isMarked: false },
+        { id: '6', mark: '', isMarked: false },
+        { id: '7', mark: '', isMarked: false },
+        { id: '8', mark: '', isMarked: false }
+      ];
+  }
+    
   }
