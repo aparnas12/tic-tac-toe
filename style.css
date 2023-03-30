@@ -1,52 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Material+Icons|IM+Fell+Great+Primer+SC|Dosis|Open+Sans+Condensed:300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  #board {
-    width: 600px;
-    height: 600px;
-  
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  box-sizing: border-box;
+}
 
-  .cell {
-    flex: 0 0 200px;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  /* This rule gives us the vertical grid lines */
-  .cell:nth-child(3n+2) { 
-    border-left: 3px solid black;
-    border-right: 3px solid black;
-  }
-  
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
-  /* This rule gives us the horizontal grid lines */
-  .cell:nth-child(n+4):nth-child(-n+6) {
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-  }
+#board {
+  width: 600px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cell {
+  flex: 0 0 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 60px;
+  color: red;
+  font-family: 'Dosis', sans-serif;
+}
+
+/* This rule gives us the vertical grid lines */
+.cell:nth-child(3n+2) {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
 
 
-  input{
-    font-size: 20px;
-    padding: 10px;
-    margin: 15px;
-    text-align: center;
-  }
-  #restart-button{
-    border: 1px solid red;
-    background-color: white;
-  }
+/* This rule gives us the horizontal grid lines */
+.cell:nth-child(n+4):nth-child(-n+6) {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+
+input {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-family: 'Quantico', sans-serif;
+}
+
+#restart-button,
+#start-button {
+  border: 2px solid red;
+  background-color: white;
+
+}
+
+#player1Name,
+#player2Name{
+  border: 2px solid blue;
+  background-color: white;
+}
+
+.players-input {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+  justify-content: left;
+
+}
+
+.players-input p {
+  color: blue;
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+  font-family: 'Quantico', sans-serif;
+}
+
+h1 {
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Quantico', sans-serif;
+  color: blue;
+}
+
+h2 {
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Quantico', sans-serif;
+  color: red;
+}
+
