@@ -71,7 +71,7 @@ function renderPlayer(){
 
 }
 
-// render the player area  section with only a restart button and msg div that will be populated later
+// render the player area  section with only a restart button and msg div that will be populated throughout the game
 function renderPlayerwithRestart(){
     
     const messageDiv = document.createElement('p');
@@ -126,7 +126,7 @@ function onBoardClick(event,state)
     const  msgDiv = document.getElementById('message');
     if(msgDiv)
     {
-        msgDiv.innerText = `${state.currentTurn} goes next. It is your turn ${convertToTitleCase(displayNextPlayerName)}`;
+        msgDiv.innerText = `${state.currentTurn} goes next. It is your turn ${convertToTitleCase(displayNextPlayerName)}!`;
     }
 
     //get a subset of possible winning combinations
@@ -147,7 +147,7 @@ function onBoardClick(event,state)
 
     //if a player has already not won the game,  check if board is full
     if (!win) {
-        console.log("i am checking to see if board is full")
+        
         win = checkBoardFull(getBoardArray());
         if(win)
         {
@@ -162,7 +162,7 @@ function onBoardClick(event,state)
 
     //store the win status in the state object 
     state.endGame = win;
-    console.log("state of the game",state.endGame);
+
     //update the game state with the latest changes on the board 
     updateBoardObject(state);
    
@@ -226,7 +226,7 @@ function onStartGameButtonClick()
 
     //it matters that the message is displayed after rendering the player area.
     const  msgDiv = document.getElementById('message');
-   // msgDiv.innerText = `${convertToTitleCase(state.player1Name)} plays ${state.player1XO}. ${convertToTitleCase(state.player2Name)} plays ${state.player2XO}`;
+   
      msgDiv.innerHTML = `${state.currentTurn} begins the game. Player ${convertToTitleCase(state.player1Name)} gets ${state.player1XO}. Player ${convertToTitleCase(state.player2Name)} gets ${state.player2XO}. `;
 }
 
@@ -239,13 +239,12 @@ function checkBoardFull(currBoard){
     currBoard.forEach(cell => {
        if( cell.innerText === '') 
        {
-        full = false;
-        console.log("is it full", full)
+        full = false; 
         return full;
        }
          
     });
-    console.log('is it full', full)
+    
     return full;
    }
      
@@ -258,7 +257,6 @@ function updateBoardObject(currState)
         const divCell = boardArray[i];
         currState.board[i].mark = divCell.innerText;
         currState.board[i].isMarked = (divCell.innerText !== '');
-
     }
 
 }
@@ -268,15 +266,13 @@ function getPossibleWinArraysforIndex(index) {
  
     let subsetWinArrays = [];
     for(let i = 0; i < winningCombos.length; i++)
-    {
-      
+    {      
         const arr = winningCombos[i].split(",");
         if(arr.includes(index)){
             subsetWinArrays.push(winningCombos[i]);
         }  
     }
-    return subsetWinArrays;
-    
+    return subsetWinArrays;    
   }
 
   function checkForWin(possArrays,index){
