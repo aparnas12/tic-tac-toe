@@ -54,7 +54,7 @@ function renderPlayer(){
     player2Elem.type = "text";
     player2Elem.id = "player2Name";
     player2Elem.placeholder ="Enter Player 2 Name ";
- 
+
     const startBtn = document.createElement("input");
     startBtn.type ="button";
     startBtn.name ="start";
@@ -318,8 +318,6 @@ function getPossibleWinArraysforIndex(index) {
       parent.removeChild(parent.firstChild);
     }
 }
-
-
 
 //not used currently
 function switchCurrentTurn(currXO){
