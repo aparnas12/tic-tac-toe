@@ -315,23 +315,6 @@ function getPossibleWinArraysforIndex(index) {
     }
 }
 
-//not used currently
-function switchCurrentTurn(currXO){
-    //arrTurn references the const gloabl array turns ['X','O']
-    let newTurn =[];
-    const marksArray = ['X','O'];
-    console.log("currently turn is " + currXO);
-    
-    let idx = marksArray.indexOf(currXO);
-    console.log(idx);
-    if (idx > -1)
-    {
-        newTurn =   marksArray.splice(idx,1) ;
-        console.log(marksArray);
-    }
-    return marksArray[0];
-}
-
 
 // **************  create the two main  containers for all the dynamically created elements and let them be globally available
 const boardDiv = document.createElement('div');
