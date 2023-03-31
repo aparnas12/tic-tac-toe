@@ -3,7 +3,6 @@ const state =window.gameState;
 
 const body = document.querySelector('body');
 
-//const winningCombos = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[0,3,6],[1,4,7],[2,5,8]];
 const winningCombos = ['0,1,2','3,4,5','6,7,8','0,4,8','2,4,6','0,3,6','1,4,7','2,5,8'];
 const turns = ['X','O'];
 
@@ -13,9 +12,19 @@ h1TicTacToe.innerText =`Let's play Tic Tac Toe`;
 const h2PlayerMessage= document.createElement('h2');
 h2PlayerMessage.innerText =`Welcome! Please enter your names below and click Start Game to begin.`;
 
-body.appendChild(h1TicTacToe);
-body.appendChild(h2PlayerMessage);
+const tictactoeImg = document.createElement("img");
+tictactoeImg.setAttribute("src", "tictactoe.png");
+tictactoeImg.setAttribute("height", "120");
+tictactoeImg.setAttribute("width", "120");
 
+const divHeadingArea = document.createElement('div');
+divHeadingArea.className ='div-heading-area';
+
+divHeadingArea.appendChild(tictactoeImg);
+divHeadingArea.appendChild(h1TicTacToe);
+
+body.appendChild(divHeadingArea);
+body.appendChild(h2PlayerMessage);
 
 //Create and render Board DIV element below
 function renderBoard(state){
